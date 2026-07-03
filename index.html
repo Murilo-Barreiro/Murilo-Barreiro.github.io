@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>" />
 </head>
@@ -19,9 +19,7 @@
   <!-- ============ NAV ============ -->
   <header class="nav" id="nav">
     <div class="nav__inner">
-      <a href="#home" class="nav__logo" aria-label="Início">
-        <span class="nav__logo-bracket">&lt;</span>MB<span class="nav__logo-bracket">/&gt;</span>
-      </a>
+      <a href="#home" class="nav__logo" aria-label="Início">MB<span class="nav__logo-dot">.</span></a>
       <nav class="nav__links" id="navLinks">
         <a href="#sobre" data-i18n="nav.about">Sobre</a>
         <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
@@ -44,14 +42,10 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="home">
-    <canvas id="heroCanvas" aria-hidden="true"></canvas>
     <div class="hero__content">
-      <p class="hero__hello mono" data-i18n="hero.hello">Olá, eu sou</p>
-      <h1 class="hero__name">Murilo <span class="accent">Barreiro</span></h1>
-      <h2 class="hero__role mono">
-        <span class="hero__prompt">&gt;</span>
-        <span id="typedRole"></span><span class="hero__cursor">▋</span>
-      </h2>
+      <p class="hero__hello" data-i18n="hero.hello">Olá, eu sou</p>
+      <h1 class="hero__name">Murilo Barreiro<span class="accent">.</span></h1>
+      <p class="hero__roles" data-i18n="hero.roles">Engenharia de Dados · BI · Ciência de Dados</p>
       <p class="hero__tagline" data-i18n="hero.tagline">
         Transformo dados brutos em decisões: pipelines ETL/ELT, modelagem dimensional,
         BI e IA aplicada no mercado financeiro.
@@ -88,7 +82,7 @@
     <!-- ============ SOBRE ============ -->
     <section class="section" id="sobre">
       <div class="section__inner reveal">
-        <h2 class="section__title"><span class="section__num mono">01.</span> <span data-i18n="about.title">Sobre mim</span></h2>
+        <h2 class="section__title" data-i18n="about.title">Sobre mim</h2>
         <div class="about">
           <div class="about__text">
             <p data-i18n="about.p1">
@@ -129,7 +123,7 @@
     <!-- ============ EXPERIÊNCIA ============ -->
     <section class="section" id="experiencia">
       <div class="section__inner reveal">
-        <h2 class="section__title"><span class="section__num mono">02.</span> <span data-i18n="exp.title">Experiência</span></h2>
+        <h2 class="section__title" data-i18n="exp.title">Experiência</h2>
         <div class="timeline">
 
           <article class="timeline__item">
@@ -176,7 +170,7 @@
     <!-- ============ PROJETOS ============ -->
     <section class="section" id="projetos">
       <div class="section__inner reveal">
-        <h2 class="section__title"><span class="section__num mono">03.</span> <span data-i18n="proj.title">Projetos</span></h2>
+        <h2 class="section__title" data-i18n="proj.title">Projetos</h2>
         <div class="projects">
 
           <article class="project card">
@@ -253,7 +247,7 @@
     <!-- ============ STACK ============ -->
     <section class="section" id="stack">
       <div class="section__inner reveal">
-        <h2 class="section__title"><span class="section__num mono">04.</span> <span data-i18n="stack.title">Stack técnica</span></h2>
+        <h2 class="section__title" data-i18n="stack.title">Stack técnica</h2>
         <div class="stack">
 
           <div class="stack__group card">
@@ -309,7 +303,7 @@
     <!-- ============ CONTATO ============ -->
     <section class="section section--contact" id="contato">
       <div class="section__inner reveal">
-        <h2 class="section__title section__title--center"><span class="section__num mono">05.</span> <span data-i18n="contact.title">Contato</span></h2>
+        <h2 class="section__title section__title--center" data-i18n="contact.title">Contato</h2>
         <p class="contact__text" data-i18n="contact.text">
           Aberto a oportunidades e novos desafios em dados. Se quiser conversar sobre
           engenharia de dados, BI ou um projeto, me chama!
