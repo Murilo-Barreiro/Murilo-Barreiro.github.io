@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Murilo Barreiro · Dados — Engenharia, BI & Ciência de Dados</title>
+  <meta name="description" content="Portfólio de Murilo Pereira Barreiro — Engenheiro de Dados e Analista de BI. Python, SQL, Airflow, ETL/ELT, modelagem dimensional e IA aplicada." />
+  <meta property="og:title" content="Murilo Barreiro · Portfólio de Dados" />
+  <meta property="og:description" content="Pipelines ETL/ELT, modelagem dimensional, BI e IA aplicada no mercado financeiro." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>" />
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo" aria-label="Início">MB<span class="nav__logo-dot">.</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="#experiencia" data-i18n="nav.experience">Experiência</a>
+        <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-toggle__opt is-active" data-lang="pt">PT</span>
+          <span class="lang-toggle__sep">·</span>
+          <span class="lang-toggle__opt" data-lang="en">EN</span>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="home">
+    <div class="hero__content">
+      <p class="hero__hello" data-i18n="hero.hello">Olá, eu sou</p>
+      <h1 class="hero__name">Murilo Barreiro<span class="accent">.</span></h1>
+      <p class="hero__roles" data-i18n="hero.roles">Engenharia de Dados · BI · Ciência de Dados</p>
+      <p class="hero__tagline" data-i18n="hero.tagline">
+        Transformo dados brutos em decisões: pipelines ETL/ELT, modelagem dimensional,
+        BI e IA aplicada no mercado financeiro.
+      </p>
+      <div class="hero__cta">
+        <a href="#projetos" class="btn btn--primary" data-i18n="hero.ctaProjects">Ver projetos</a>
+        <a href="assets/cv/Murilo-Barreiro-CV-PT.pdf" class="btn btn--ghost" id="cvLink" download>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          <span data-i18n="hero.ctaCv">Baixar CV</span>
+        </a>
+      </div>
+      <div class="hero__social">
+        <a href="https://github.com/Murilo-Barreiro" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/murilo-barreiro-a9a9441ab" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.4V9h3.4v1.6c.5-.9 1.6-1.9 3.4-1.9 3.6 0 4.2 2.4 4.2 5.5v6.3zM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1zm1.8 13.1H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-1-.8-1.7-1.8-1.7z"/></svg>
+        </a>
+        <a href="mailto:murilobarreiro7@gmail.com" aria-label="E-mail">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7L22 7"/></svg>
+        </a>
+      </div>
+      <div class="hero__location mono">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        São Paulo, Brasil
+      </div>
+    </div>
+    <a href="#sobre" class="hero__scroll" aria-label="Rolar para baixo">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+    </a>
+  </section>
+
+  <main>
+    <!-- ============ SOBRE ============ -->
+    <section class="section" id="sobre">
+      <div class="section__inner reveal">
+        <h2 class="section__title" data-i18n="about.title">Sobre mim</h2>
+        <div class="about">
+          <div class="about__text">
+            <p data-i18n="about.p1">
+              Sou profissional de dados com atuação no mercado financeiro, na ponte entre
+              engenharia de dados e áreas de negócio. Construo e orquestro pipelines ETL/ELT
+              integrando APIs, bancos relacionais e arquivos externos, com foco em automação,
+              reprocessamento seguro e performance.
+            </p>
+            <p data-i18n="about.p2">
+              Desenvolvo modelagem dimensional (Star Schema) para consumo analítico, automatizo
+              relatórios gerenciais e dashboards, e aplico IA na prática — de transcrição e
+              diarização de áudio a geração de documentos com LLMs. Minha vivência inclui
+              corretora e gestora de recursos: fundos, FIDCs e controladoria.
+            </p>
+          </div>
+          <div class="about__stats">
+            <div class="stat">
+              <span class="stat__value mono" data-count="3">0</span><span class="stat__plus mono">+</span>
+              <span class="stat__label" data-i18n="about.stat1">anos em dados</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value mono" data-count="2">0</span>
+              <span class="stat__label" data-i18n="about.stat2">empresas do mercado financeiro</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value mono" data-count="3">0</span>
+              <span class="stat__label" data-i18n="about.stat3">projetos publicados</span>
+            </div>
+            <div class="stat">
+              <span class="stat__value mono" data-count="15">0</span><span class="stat__plus mono">+</span>
+              <span class="stat__label" data-i18n="about.stat4">tecnologias na stack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIÊNCIA ============ -->
+    <section class="section" id="experiencia">
+      <div class="section__inner reveal">
+        <h2 class="section__title" data-i18n="exp.title">Experiência</h2>
+        <div class="timeline">
+
+          <article class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__card card">
+              <span class="timeline__period mono" data-i18n="exp.j1.period">02/2025 – Atual</span>
+              <h3 class="timeline__role" data-i18n="exp.j1.role">Analista de BI / Dados Pleno</h3>
+              <p class="timeline__company">Nova Futura Corretora de Investimentos</p>
+              <ul class="timeline__list">
+                <li data-i18n="exp.j1.b1">Pipelines ETL/ELT em Python e SQL integrando APIs, bancos relacionais e arquivos externos, com automação e reprocessamento seguro.</li>
+                <li data-i18n="exp.j1.b2">Orquestração de workflows com Airflow: dependências, políticas de retry, monitoramento de falhas e execução incremental.</li>
+                <li data-i18n="exp.j1.b3">Processos ETL no Pentaho Data Integration (PDI) em ambiente produtivo.</li>
+                <li data-i18n="exp.j1.b4">Modelagem dimensional (Star Schema) sustentando dashboards e análises recorrentes de performance financeira e operacional.</li>
+                <li data-i18n="exp.j1.b5">Otimização de queries e cargas SQL, reduzindo tempo de execução e uso de recursos.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Airflow</span><span class="tag">Pentaho</span><span class="tag">Star Schema</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__card card">
+              <span class="timeline__period mono">07/2023 – 02/2025</span>
+              <h3 class="timeline__role" data-i18n="exp.j2.role">Estagiário / Analista de Dados Jr</h3>
+              <p class="timeline__company">Carmel Capital</p>
+              <ul class="timeline__list">
+                <li data-i18n="exp.j2.b1">Automação de relatórios financeiros e de performance de ativos, integrando planilhas, bases de dados e dashboards.</li>
+                <li data-i18n="exp.j2.b2">Controladoria diária de fundos fechados (FIDCs), aplicando regras de regulamento e alocação de ativos.</li>
+                <li data-i18n="exp.j2.b3">Automação da geração de relatórios mensais para investidores, consolidando dados financeiros e operacionais.</li>
+                <li data-i18n="exp.j2.b4">Estruturação e manutenção do banco de dados interno, garantindo consistência e confiabilidade das informações.</li>
+              </ul>
+              <div class="tags">
+                <span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Excel/VBA</span><span class="tag">FIDCs</span>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETOS ============ -->
+    <section class="section" id="projetos">
+      <div class="section__inner reveal">
+        <h2 class="section__title" data-i18n="proj.title">Projetos</h2>
+        <div class="projects">
+
+          <article class="project card">
+            <div class="project__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.7-4 3-9 3s-9-1.3-9-3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/></svg>
+            </div>
+            <h3 class="project__name" data-i18n="proj.p1.name">Datamart Analítico em Star Schema</h3>
+            <p class="project__desc" data-i18n="proj.p1.desc">
+              Modelagem completa de datamart: fatos, dimensões, chaves substitutas e granularidade.
+              Pipelines ETL de carga e atualização com nomenclatura padronizada, modelo lógico,
+              dicionário de dados e fluxo de cargas documentados.
+            </p>
+            <div class="tags">
+              <span class="tag">SQL</span><span class="tag">Star Schema</span><span class="tag">ETL</span><span class="tag" data-i18n="proj.p1.tag4">Documentação</span>
+            </div>
+            <div class="project__links">
+              <a href="https://dbdocs.io/murilobarreiro7/Projeto-Datamart" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                <span data-i18n="proj.p1.link1">Diagrama</span>
+              </a>
+              <a href="https://notion.so/2fc0d6fd969c809cac19ce4f2071e52c" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+                <span data-i18n="proj.p1.link2">Documentação</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="project__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8"/></svg>
+            </div>
+            <h3 class="project__name" data-i18n="proj.p2.name">Ata de Reunião com IA</h3>
+            <p class="project__desc" data-i18n="proj.p2.desc">
+              Pipeline 100% em Python que processa reuniões de ponta a ponta: transcrição de áudio
+              com Whisper (faster-whisper), diarização de falantes com Pyannote e geração automática
+              de atas e resumos com LLMs (GPT e Gemini). Modularizado e com logging detalhado.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">Whisper</span><span class="tag">Pyannote</span><span class="tag">LLMs</span>
+            </div>
+            <div class="project__links">
+              <a href="https://github.com/Murilo-Barreiro/transcricao-e-diarizacao" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+                <span data-i18n="proj.repo">Repositório</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="project card">
+            <div class="project__icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+            </div>
+            <h3 class="project__name" data-i18n="proj.p3.name">Simulador de Empacotamento 2D — TCC</h3>
+            <p class="project__desc" data-i18n="proj.p3.desc">
+              Solução computacional de otimização (problema de empacotamento 2D) desenvolvida como
+              TCC em Engenharia de Produção. Implementação algorítmica com rectpack e interface em
+              Streamlit, aplicando modularização e boas práticas de manutenção de código.
+            </p>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">rectpack</span><span class="tag">Streamlit</span><span class="tag" data-i18n="proj.p3.tag4">Otimização</span>
+            </div>
+            <div class="project__links">
+              <a href="https://github.com/Murilo-Barreiro/simulador-de-empacotamento-2D" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="15" height="15" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+                <span data-i18n="proj.repo2">Repositório</span>
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ STACK ============ -->
+    <section class="section" id="stack">
+      <div class="section__inner reveal">
+        <h2 class="section__title" data-i18n="stack.title">Stack técnica</h2>
+        <div class="stack">
+
+          <div class="stack__group card">
+            <h3 class="stack__name mono" data-i18n="stack.g1">Linguagens & Análise</h3>
+            <div class="tags tags--lg">
+              <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power BI · DAX</span><span class="tag">Excel · VBA</span>
+            </div>
+          </div>
+
+          <div class="stack__group card">
+            <h3 class="stack__name mono" data-i18n="stack.g2">Engenharia de Dados</h3>
+            <div class="tags tags--lg">
+              <span class="tag">ETL/ELT</span><span class="tag">Airflow</span><span class="tag">Pentaho (PDI)</span><span class="tag">Docker</span><span class="tag">Git</span><span class="tag">FastAPI</span>
+            </div>
+          </div>
+
+          <div class="stack__group card">
+            <h3 class="stack__name mono" data-i18n="stack.g3">Bancos de Dados</h3>
+            <div class="tags tags--lg">
+              <span class="tag">SQL Server</span><span class="tag">Oracle</span><span class="tag">PostgreSQL</span><span class="tag">CTEs · Window Functions</span><span class="tag" data-i18n="stack.g3.t5">Modelagem Dimensional</span>
+            </div>
+          </div>
+
+          <div class="stack__group card">
+            <h3 class="stack__name mono" data-i18n="stack.g4">Ciência de Dados & IA</h3>
+            <div class="tags tags--lg">
+              <span class="tag">pandas</span><span class="tag">PySpark</span><span class="tag">scikit-learn</span><span class="tag">Whisper</span><span class="tag">Pyannote</span><span class="tag">LLMs · GPT/Gemini</span>
+            </div>
+          </div>
+
+          <div class="stack__group card">
+            <h3 class="stack__name mono">Cloud</h3>
+            <div class="tags tags--lg">
+              <span class="tag">AWS · RDS</span><span class="tag" data-i18n="stack.g5.t2">Fundamentos de serviços de dados</span>
+            </div>
+          </div>
+
+          <div class="stack__group card">
+            <h3 class="stack__name mono" data-i18n="stack.g6">Formação & Idiomas</h3>
+            <p class="stack__edu">
+              <strong data-i18n="edu.degree">Engenharia de Produção</strong><br />
+              Instituto Mauá de Tecnologia · <span data-i18n="edu.year">concluído em 12/2025</span>
+            </p>
+            <div class="tags tags--lg">
+              <span class="tag" data-i18n="edu.lang1">Português · nativo</span><span class="tag" data-i18n="edu.lang2">Inglês · avançado</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTATO ============ -->
+    <section class="section section--contact" id="contato">
+      <div class="section__inner reveal">
+        <h2 class="section__title section__title--center" data-i18n="contact.title">Contato</h2>
+        <p class="contact__text" data-i18n="contact.text">
+          Aberto a oportunidades e novos desafios em dados. Se quiser conversar sobre
+          engenharia de dados, BI ou um projeto, me chama!
+        </p>
+        <a href="mailto:murilobarreiro7@gmail.com" class="btn btn--primary btn--lg" data-i18n="contact.cta">Enviar e-mail</a>
+        <div class="contact__links mono">
+          <a href="https://github.com/Murilo-Barreiro" target="_blank" rel="noopener">github.com/Murilo-Barreiro</a>
+          <a href="https://linkedin.com/in/murilo-barreiro-a9a9441ab" target="_blank" rel="noopener">linkedin.com/in/murilo-barreiro</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer mono">
+    <p data-i18n="footer.text">Desenvolvido por Murilo Barreiro · Python, SQL & muito café</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
