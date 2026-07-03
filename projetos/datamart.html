@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datamart Analítico em Star Schema · Murilo Barreiro</title>
+  <meta name="description" content="Case study: modelagem dimensional completa de datamart em Star Schema com pipelines ETL e documentação." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" aria-label="Início">MB<span class="nav__logo-dot">.</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="../index.html#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="../index.html#experiencia" data-i18n="nav.experience">Experiência</a>
+        <a href="../index.html#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="../index.html#stack" data-i18n="nav.stack">Stack</a>
+        <a href="../index.html#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-toggle__opt is-active" data-lang="pt">PT</span>
+          <span class="lang-toggle__sep">·</span>
+          <span class="lang-toggle__opt" data-lang="en">EN</span>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="case">
+    <div class="case__inner">
+      <a href="../index.html#projetos" class="case__back" data-i18n="case.back">← Voltar aos projetos</a>
+
+      <header class="case__hero">
+        <h1 class="case__title" data-i18n="case.dm.title">Datamart Analítico em Star Schema</h1>
+        <p class="case__subtitle" data-i18n="case.dm.subtitle">
+          Modelagem dimensional completa — de decisões de granularidade a pipelines de carga e
+          documentação — para servir análises do mercado financeiro.
+        </p>
+        <div class="tags">
+          <span class="tag">SQL</span><span class="tag">Star Schema</span><span class="tag">ETL</span><span class="tag" data-i18n="case.dm.tag4">Modelagem Dimensional</span><span class="tag" data-i18n="case.dm.tag5">Documentação</span>
+        </div>
+        <div class="case__links">
+          <a href="https://dbdocs.io/murilobarreiro7/Projeto-Datamart" target="_blank" rel="noopener" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+            <span data-i18n="case.dm.link1">Diagrama interativo (dbdocs)</span>
+          </a>
+          <a href="https://notion.so/2fc0d6fd969c809cac19ce4f2071e52c" target="_blank" rel="noopener" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+            <span data-i18n="case.dm.link2">Documentação (Notion)</span>
+          </a>
+        </div>
+      </header>
+
+      <section class="case__section">
+        <h2 data-i18n="case.ctxTitle">O contexto</h2>
+        <p data-i18n="case.dm.ctx">
+          Quando as áreas de negócio consomem dados direto dos sistemas transacionais, cada
+          análise reinventa as regras: queries pesadas, métricas que não batem entre relatórios
+          e nenhuma visão histórica confiável. A resposta clássica de engenharia analítica é
+          separar o consumo em um datamart dimensional — e este projeto percorre esse caminho
+          de ponta a ponta.
+        </p>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.solTitle">A solução</h2>
+        <p data-i18n="case.dm.sol">
+          Um datamart em Star Schema: tabela fato com granularidade explícita cercada por
+          dimensões com chaves substitutas (surrogate keys), carregado por pipelines ETL com
+          nomenclatura padronizada. Cada decisão de modelagem — o que é fato, o que é dimensão,
+          qual o grão de uma linha — foi documentada em modelo lógico, dicionário de dados e
+          fluxo de cargas.
+        </p>
+        <figure class="case__figure case__figure--diagram">
+          <img src="../assets/img/datamart-star-schema.svg" alt="Diagrama conceitual do star schema: fato central e quatro dimensões" loading="lazy" />
+          <figcaption data-i18n="case.dm.fig1">
+            Visão conceitual do modelo — o diagrama completo, com todas as colunas e
+            relacionamentos, está publicado no dbdocs.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.hlTitle">Destaques técnicos</h2>
+        <ul class="case__list">
+          <li data-i18n="case.dm.h1">Granularidade definida antes de qualquer tabela: cada linha da fato representa um evento no seu menor nível útil de análise — a decisão que governa todo o modelo.</li>
+          <li data-i18n="case.dm.h2">Chaves substitutas em todas as dimensões, desacoplando o modelo analítico das chaves naturais dos sistemas de origem.</li>
+          <li data-i18n="case.dm.h3">Pipelines ETL de carga e atualização com nomenclatura padronizada — legibilidade e manutenção como requisito, não acidente.</li>
+          <li data-i18n="case.dm.h4">Documentação tratada como entregável: modelo lógico, dicionário de dados e fluxo de cargas publicados (dbdocs + Notion).</li>
+          <li data-i18n="case.dm.h5">Modelo pronto para consumo por dashboards e análises recorrentes sem retrabalho de regra de negócio.</li>
+        </ul>
+      </section>
+
+      <nav class="case__nav">
+        <a href="ata-ia.html" class="case__nav-link" data-i18n="case.next.ata">Próximo case: Ata de Reunião com IA →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p data-i18n="footer.text">Desenvolvido por Murilo Barreiro · Python, SQL & muito café</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

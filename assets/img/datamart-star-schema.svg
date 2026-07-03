@@ -1,0 +1,65 @@
+<svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat, system-ui, sans-serif">
+  <defs>
+    <marker id="dot" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5">
+      <circle cx="5" cy="5" r="4" fill="#bf5af2"/>
+    </marker>
+  </defs>
+  <style>
+    .dim { fill:#1c1c1e; stroke:#3a3a3f; stroke-width:1.5; rx:14; }
+    .fact { fill:#2a1640; stroke:#bf5af2; stroke-width:2; }
+    .t { fill:#f5f5f7; font-size:16px; font-weight:700; }
+    .k { fill:#bf5af2; font-size:11.5px; font-weight:600; }
+    .f { fill:#a1a1a6; font-size:11.5px; }
+    .lk { stroke:#5a5a60; stroke-width:1.6; }
+  </style>
+
+  <!-- ligações -->
+  <line class="lk" x1="450" y1="280" x2="160" y2="115" marker-end="url(#dot)"/>
+  <line class="lk" x1="450" y1="280" x2="740" y2="115" marker-end="url(#dot)"/>
+  <line class="lk" x1="450" y1="280" x2="160" y2="445" marker-end="url(#dot)"/>
+  <line class="lk" x1="450" y1="280" x2="740" y2="445" marker-end="url(#dot)"/>
+
+  <!-- DIM TEMPO -->
+  <rect class="dim" x="40" y="40" width="240" height="150" rx="14"/>
+  <text class="t" x="60" y="72">dim_tempo</text>
+  <text class="k" x="60" y="98">sk_tempo (PK)</text>
+  <text class="f" x="60" y="120">data · mês · trimestre · ano</text>
+  <text class="f" x="60" y="140">dia_util · feriado</text>
+  <text class="f" x="60" y="160">ano_fiscal</text>
+
+  <!-- DIM CLIENTE -->
+  <rect class="dim" x="620" y="40" width="240" height="150" rx="14"/>
+  <text class="t" x="640" y="72">dim_cliente</text>
+  <text class="k" x="640" y="98">sk_cliente (PK)</text>
+  <text class="f" x="640" y="120">código · segmento</text>
+  <text class="f" x="640" y="140">perfil · faixa patrimônio</text>
+  <text class="f" x="640" y="160">assessor vinculado</text>
+
+  <!-- DIM PRODUTO -->
+  <rect class="dim" x="40" y="370" width="240" height="150" rx="14"/>
+  <text class="t" x="60" y="402">dim_produto</text>
+  <text class="k" x="60" y="428">sk_produto (PK)</text>
+  <text class="f" x="60" y="450">classe · subclasse</text>
+  <text class="f" x="60" y="470">emissor · liquidez</text>
+  <text class="f" x="60" y="490">indexador</text>
+
+  <!-- DIM OPERACAO -->
+  <rect class="dim" x="620" y="370" width="240" height="150" rx="14"/>
+  <text class="t" x="640" y="402">dim_operacao</text>
+  <text class="k" x="640" y="428">sk_operacao (PK)</text>
+  <text class="f" x="640" y="450">tipo · canal</text>
+  <text class="f" x="640" y="470">status · origem</text>
+  <text class="f" x="640" y="490">mesa</text>
+
+  <!-- FATO -->
+  <rect class="fact" x="310" y="185" width="280" height="190" rx="16"/>
+  <text class="t" x="335" y="222">fato_movimentacao</text>
+  <text class="k" x="335" y="250">sk_tempo · sk_cliente (FK)</text>
+  <text class="k" x="335" y="270">sk_produto · sk_operacao (FK)</text>
+  <text class="f" x="335" y="296">volume_financeiro</text>
+  <text class="f" x="335" y="316">quantidade · receita</text>
+  <text class="f" x="335" y="336">granularidade: 1 linha =</text>
+  <text class="f" x="335" y="354">operação × dia</text>
+
+  <text x="450" y="545" text-anchor="middle" fill="#6e6e73" font-size="12">Visão conceitual — modelo completo documentado no dbdocs</text>
+</svg>
