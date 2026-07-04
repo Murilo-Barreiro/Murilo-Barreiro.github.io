@@ -1,0 +1,81 @@
+<svg viewBox="0 0 940 640" xmlns="http://www.w3.org/2000/svg" font-family="Montserrat, system-ui, sans-serif">
+  <style>
+    .dim { fill:#1c1c1e; stroke:#3a3a3f; stroke-width:1.5; }
+    .fact { fill:#2a1640; stroke:#bf5af2; stroke-width:2; }
+    .t { fill:#f5f5f7; font-size:15px; font-weight:700; }
+    .k { fill:#bf5af2; font-size:11px; font-weight:600; }
+    .f { fill:#a1a1a6; font-size:11px; }
+    .lk { stroke:#5a5a60; stroke-width:1.5; }
+  </style>
+
+  <!-- fundo opaco: garante contraste mesmo com auto-dark de navegadores -->
+  <rect x="0" y="0" width="940" height="640" fill="#141416" rx="18"/>
+
+  <!-- ligações FatoReceita -->
+  <line class="lk" x1="370" y1="325" x2="145" y2="150"/>
+  <line class="lk" x1="370" y1="325" x2="470" y2="150"/>
+  <line class="lk" x1="370" y1="325" x2="795" y2="150"/>
+  <line class="lk" x1="370" y1="325" x2="145" y2="480"/>
+  <line class="lk" x1="370" y1="325" x2="470" y2="480"/>
+  <!-- ligações FatoMetaMensal -->
+  <line class="lk" x1="770" y1="390" x2="470" y2="500"/>
+  <line class="lk" x1="770" y1="390" x2="795" y2="480"/>
+
+  <!-- DimDate -->
+  <rect class="dim" x="40" y="40" width="210" height="110" rx="12"/>
+  <text class="t" x="58" y="70">DimDate</text>
+  <text class="k" x="58" y="92">SK_Data (PK)</text>
+  <text class="f" x="58" y="112">calendário completo</text>
+  <text class="f" x="58" y="130">flags de pregão e feriado</text>
+
+  <!-- DimCliente -->
+  <rect class="dim" x="365" y="40" width="210" height="110" rx="12"/>
+  <text class="t" x="383" y="70">DimCliente</text>
+  <text class="k" x="383" y="92">CD_Cliente (PK)</text>
+  <text class="f" x="383" y="112">cadastro e perfil</text>
+  <text class="f" x="383" y="130">vínculo com CRM e assessor</text>
+
+  <!-- DimProduto -->
+  <rect class="dim" x="690" y="40" width="210" height="110" rx="12"/>
+  <text class="t" x="708" y="70">DimProduto</text>
+  <text class="k" x="708" y="92">SK_Produto (PK)</text>
+  <text class="f" x="708" y="112">categoria e subcategoria</text>
+  <text class="f" x="708" y="130">emissor</text>
+
+  <!-- FatoReceita -->
+  <rect class="fact" x="230" y="240" width="280" height="170" rx="14"/>
+  <text class="t" x="252" y="272">FatoReceita</text>
+  <text class="k" x="252" y="296">PK composta:</text>
+  <text class="k" x="252" y="313">SK_Data · CD_Cliente · SK_Produto</text>
+  <text class="f" x="252" y="336">negócios · valor bruto</text>
+  <text class="f" x="252" y="354">receita bruta e líquida</text>
+  <text class="f" x="252" y="378">grão: data × cliente × produto</text>
+
+  <!-- FatoMetaMensal -->
+  <rect class="fact" x="640" y="260" width="260" height="130" rx="14"/>
+  <text class="t" x="662" y="292">FatoMetaMensal</text>
+  <text class="k" x="662" y="315">owner × tipo de meta × mês</text>
+  <text class="f" x="662" y="337">valor-alvo mensal</text>
+  <text class="f" x="662" y="355">realizado vs. meta</text>
+
+  <!-- DimAssessor -->
+  <rect class="dim" x="40" y="480" width="210" height="110" rx="12"/>
+  <text class="t" x="58" y="510">DimAssessor</text>
+  <text class="k" x="58" y="532">SK_Assessor (PK)</text>
+  <text class="f" x="58" y="552">hierarquia comercial</text>
+
+  <!-- DimOwner -->
+  <rect class="dim" x="365" y="480" width="210" height="110" rx="12"/>
+  <text class="t" x="383" y="510">DimOwner</text>
+  <text class="k" x="383" y="532">SK_Owner (PK)</text>
+  <text class="f" x="383" y="552">flag de assessor</text>
+  <text class="f" x="383" y="570">status ativo/privado</text>
+
+  <!-- DimTipoMeta -->
+  <rect class="dim" x="690" y="480" width="210" height="110" rx="12"/>
+  <text class="t" x="708" y="510">DimTipoMeta</text>
+  <text class="k" x="708" y="532">SK_TipoMeta (PK)</text>
+  <text class="f" x="708" y="552">tipo e unidade de medida</text>
+
+  <text x="470" y="625" text-anchor="middle" fill="#6e6e73" font-size="12">Modelo real resumido · diagrama completo com todas as colunas no dbdocs</text>
+</svg>
