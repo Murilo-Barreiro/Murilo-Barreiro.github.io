@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="color-scheme" content="dark" />
-  <title>Datamart Analítico em Star Schema · Murilo Barreiro</title>
-  <meta name="description" content="Case study: modelagem dimensional completa de datamart em Star Schema com pipelines ETL e documentação." />
+  <title>Data Mart de Receita · Murilo Barreiro</title>
+  <meta name="description" content="Case study: data mart dimensional de receita da assessoria de investimentos, com ETL orquestrado no Airflow e modelo estrela no SQL Server." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -42,13 +42,13 @@
       <a href="../index.html#projetos" class="case__back" data-i18n="case.back">← Voltar aos projetos</a>
 
       <header class="case__hero">
-        <h1 class="case__title" data-i18n="case.dm.title">Datamart Analítico em Star Schema</h1>
+        <h1 class="case__title" data-i18n="case.dm.title">Data Mart de Receita</h1>
         <p class="case__subtitle" data-i18n="case.dm.subtitle">
-          Modelagem dimensional completa — de decisões de granularidade a pipelines de carga e
-          documentação — para servir análises do mercado financeiro.
+          Receita da assessoria de investimentos, vinda de fontes em SQL Server, Oracle e APIs
+          externas, consolidada em um modelo estrela no SQL Server com ETL orquestrado no Airflow.
         </p>
         <div class="tags">
-          <span class="tag">SQL</span><span class="tag">Star Schema</span><span class="tag">ETL</span><span class="tag" data-i18n="case.dm.tag4">Modelagem Dimensional</span><span class="tag" data-i18n="case.dm.tag5">Documentação</span>
+          <span class="tag">SQL Server</span><span class="tag">Airflow</span><span class="tag">Star Schema</span><span class="tag">ETL</span><span class="tag">Oracle</span>
         </div>
         <div class="case__links">
           <a href="https://dbdocs.io/murilobarreiro7/Projeto-Datamart" target="_blank" rel="noopener" class="btn btn--ghost">
@@ -65,41 +65,58 @@
       <section class="case__section">
         <h2 data-i18n="case.ctxTitle">O contexto</h2>
         <p data-i18n="case.dm.ctx">
-          Quando as áreas de negócio consomem dados direto dos sistemas transacionais, cada
-          análise reinventa as regras: queries pesadas, métricas que não batem entre relatórios
-          e nenhuma visão histórica confiável. A resposta clássica de engenharia analítica é
-          separar o consumo em um datamart dimensional — e este projeto percorre esse caminho
-          de ponta a ponta.
+          O time de assessoria de investimentos apura receita a partir de fontes heterogêneas:
+          renda fixa, renda variável, fundos e outros produtos, distribuídos entre SQL Server,
+          Oracle e APIs externas. Cada fonte tem estrutura, granularidade e regras de negócio
+          próprias. Sem um processo estruturado de integração, era inviável analisar receita
+          consolidada, produtividade dos assessores e evolução de carteira.
         </p>
       </section>
 
       <section class="case__section">
         <h2 data-i18n="case.solTitle">A solução</h2>
         <p data-i18n="case.dm.sol">
-          Um datamart em Star Schema: tabela fato com granularidade explícita cercada por
-          dimensões com chaves substitutas (surrogate keys), carregado por pipelines ETL com
-          nomenclatura padronizada. Cada decisão de modelagem — o que é fato, o que é dimensão,
-          qual o grão de uma linha — foi documentada em modelo lógico, dicionário de dados e
-          fluxo de cargas.
+          Modelei e implementei um data mart dimensional em esquema estrela no SQL Server, com
+          pipeline de ETL orquestrado no Airflow. Os dados brutos das diferentes origens chegam
+          a uma camada de staging, onde são padronizados e conformados com as chaves substitutas
+          do modelo, e só então entram nas tabelas fato e dimensão por carga incremental.
         </p>
         <figure class="case__figure case__figure--diagram">
-          <img src="../assets/img/datamart-star-schema.svg" alt="Diagrama conceitual do star schema: fato central e quatro dimensões" loading="lazy" />
+          <img src="../assets/img/datamart-star-schema.svg" alt="Diagrama do modelo estrela: FatoReceita e FatoMetaMensal com as dimensões de data, cliente, produto, assessor, owner e tipo de meta" loading="lazy" />
           <figcaption data-i18n="case.dm.fig1">
-            Visão conceitual do modelo — o diagrama completo, com todas as colunas e
-            relacionamentos, está publicado no dbdocs.
+            O modelo real resumido: duas fatos e seis dimensões. O diagrama completo, com todas
+            as colunas e relacionamentos, está publicado no dbdocs.
           </figcaption>
         </figure>
       </section>
 
       <section class="case__section">
-        <h2 data-i18n="case.hlTitle">Destaques técnicos</h2>
+        <h2 data-i18n="case.dm.archTitle">A arquitetura</h2>
         <ul class="case__list">
-          <li data-i18n="case.dm.h1">Granularidade definida antes de qualquer tabela: cada linha da fato representa um evento no seu menor nível útil de análise — a decisão que governa todo o modelo.</li>
-          <li data-i18n="case.dm.h2">Chaves substitutas em todas as dimensões, desacoplando o modelo analítico das chaves naturais dos sistemas de origem.</li>
-          <li data-i18n="case.dm.h3">Pipelines ETL de carga e atualização com nomenclatura padronizada — legibilidade e manutenção como requisito, não acidente.</li>
-          <li data-i18n="case.dm.h4">Documentação tratada como entregável: modelo lógico, dicionário de dados e fluxo de cargas publicados (dbdocs + Notion).</li>
-          <li data-i18n="case.dm.h5">Modelo pronto para consumo por dashboards e análises recorrentes sem retrabalho de regra de negócio.</li>
+          <li data-i18n="case.dm.a1">FatoReceita concentra o negócio: granularidade por data, cliente e produto, com quantidade de negócios, valor bruto e receitas bruta e líquida. Chave primária composta e FKs para todas as dimensões.</li>
+          <li data-i18n="case.dm.a2">FatoMetaMensal fica isolada da fato de receita e relaciona owner, tipo de meta e mês ao valor-alvo, o que permite comparar receita realizada contra a meta.</li>
+          <li data-i18n="case.dm.a3">Seis dimensões dão contexto: cliente (cadastro, perfil e vínculo com o CRM), produto (categoria, subcategoria e emissor), assessor e owner (hierarquia comercial), calendário completo com flags de pregão e feriado, e tipos de meta com unidade de medida.</li>
+          <li data-i18n="case.dm.a4">A staging recebe os dados brutos identificados por fonte, com tipos flexíveis e sem chaves, servindo de área de validação e reprocessamento antes da carga final.</li>
         </ul>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.dm.decTitle">Decisões técnicas</h2>
+        <ul class="case__list">
+          <li data-i18n="case.dm.h1">Índices covering na FatoReceita para os principais padrões de consulta (por cliente, por data e assessor, por owner, por produto), cada um incluindo as colunas de valor mais consultadas para responder dashboards sem lookup na tabela base.</li>
+          <li data-i18n="case.dm.h2">Coluna computada de semestre na dimensão de calendário, evitando lógica duplicada nas consultas de BI.</li>
+          <li data-i18n="case.dm.h3">Constraints de FK com WITH CHECK desde a criação, impedindo que dados órfãos das múltiplas fontes cheguem à camada dimensional.</li>
+          <li data-i18n="case.dm.h4">Separação clara entre staging (schema flexível, sem PK) e camada dimensional (tipagem estrita, PKs e FKs), permitindo validar e reprocessar antes da carga final.</li>
+          <li data-i18n="case.dm.h5">Airflow unificando a ingestão de fontes com stacks distintas (SQL Server, Oracle e APIs) num único fluxo controlado e agendado.</li>
+        </ul>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.dm.resTitle">O resultado</h2>
+        <p data-i18n="case.dm.res">
+          Receita de múltiplas fontes consolidada em um único modelo dimensional, com performance
+          adequada para os dashboards de BI e para o acompanhamento de metas por owner e mês.
+        </p>
       </section>
 
       <nav class="case__nav">
