@@ -13,6 +13,9 @@
     .lk { stroke:#5a5a60; stroke-width:1.6; }
   </style>
 
+  <!-- fundo opaco: garante contraste mesmo com auto-dark de navegadores -->
+  <rect x="0" y="0" width="900" height="560" fill="#141416" rx="18"/>
+
   <!-- ligações -->
   <line class="lk" x1="450" y1="280" x2="160" y2="115" marker-end="url(#dot)"/>
   <line class="lk" x1="450" y1="280" x2="740" y2="115" marker-end="url(#dot)"/>
