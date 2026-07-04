@@ -1,5 +1,6 @@
 /* ============ TOKENS — preto & branco à la Apple TV, acento roxo ============ */
 :root {
+  color-scheme: dark;
   --bg: #000000;
   --bg-alt: #0a0a0c;
   --card: #141416;
