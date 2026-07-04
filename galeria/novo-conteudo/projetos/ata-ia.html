@@ -61,7 +61,7 @@
       <section class="case__section">
         <h2 data-i18n="case.ctxTitle2">O contexto</h2>
         <p data-i18n="case.ata.ctx">
-          Reuniões entre assessores de investimento e clientes precisam de registro fiel — do
+          Reuniões entre assessores de investimento e clientes precisam de registro fiel do
           que foi discutido, decidido e prometido. Fazer isso manualmente consome tempo de quem
           deveria estar atendendo e produz atas inconsistentes. A combinação de modelos de
           speech-to-text, diarização e LLMs torna possível automatizar o fluxo inteiro.
@@ -74,17 +74,17 @@
           Um pipeline modular que recebe áudio ou vídeo (inclusive em lote), normaliza com
           FFmpeg, transcreve com faster-whisper, identifica quem falou em cada trecho com
           Pyannote, alinha falante e fala, e envia a transcrição estruturada para um LLM
-          (GPT ou Gemini, configurável) gerar ata e resumo em markdown — com logging detalhado
+          (GPT ou Gemini, configurável) gerar ata e resumo em markdown, com logging detalhado
           em cada etapa.
         </p>
         <figure class="case__figure case__figure--diagram">
           <img src="../assets/img/ata-pipeline.svg" alt="Diagrama do pipeline: áudio, FFmpeg, Whisper, Pyannote, merge, LLM, ata" loading="lazy" />
           <figcaption data-i18n="case.ata.fig1">
-            As sete etapas do pipeline — cada bloco é um módulo Python independente.
+            As sete etapas do pipeline. Cada bloco é um módulo Python independente.
           </figcaption>
         </figure>
         <figure class="case__figure">
-          <pre class="case__sample" data-i18n="case.ata.sample">## Ata — Reunião de acompanhamento (exemplo ilustrativo)
+          <pre class="case__sample" data-i18n="case.ata.sample">## Ata: Reunião de acompanhamento (exemplo ilustrativo)
 
 **Participantes:** FALANTE_01 (assessor), FALANTE_02 (cliente)
 
@@ -98,7 +98,7 @@ interesse em aumentar exposição a renda fixa indexada.
 **Pendências:**
 - Assessor: enviar comparativo de fundos até sexta-feira</pre>
           <figcaption data-i18n="case.ata.fig2">
-            Formato da ata gerada — exemplo ilustrativo com dados fictícios.
+            Formato da ata gerada, com dados fictícios de exemplo.
           </figcaption>
         </figure>
       </section>
@@ -106,11 +106,11 @@ interesse em aumentar exposição a renda fixa indexada.
       <section class="case__section">
         <h2 data-i18n="case.hlTitle2">Destaques técnicos</h2>
         <ul class="case__list">
-          <li data-i18n="case.ata.h1">Diarização com atribuição de falas: a transcrição final indica quem disse o quê, com timestamps — requisito para uma ata ter valor.</li>
-          <li data-i18n="case.ata.h2">Provedor de LLM configurável (OpenAI GPT ou Google Gemini) sem mudança de código — só de configuração.</li>
+          <li data-i18n="case.ata.h1">Diarização com atribuição de falas: a transcrição final indica quem disse o quê, com timestamps, requisito para uma ata ter valor.</li>
+          <li data-i18n="case.ata.h2">Provedor de LLM configurável (OpenAI GPT ou Google Gemini) sem mudança de código, só de configuração.</li>
           <li data-i18n="case.ata.h3">Processamento em lote de múltiplos arquivos, com suporte a formatos de áudio e vídeo via FFmpeg.</li>
           <li data-i18n="case.ata.h4">Aceleração opcional por GPU (CUDA) na transcrição, com fallback transparente para CPU.</li>
-          <li data-i18n="case.ata.h5">Modularização e logging detalhado por etapa — cada fase do pipeline pode ser reexecutada e auditada isoladamente.</li>
+          <li data-i18n="case.ata.h5">Modularização e logging detalhado por etapa: cada fase do pipeline pode ser reexecutada e auditada isoladamente.</li>
         </ul>
       </section>
 
