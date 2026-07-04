@@ -44,7 +44,7 @@
       <header class="case__hero">
         <h1 class="case__title" data-i18n="case.sim.title">Simulador de Empacotamento 2D</h1>
         <p class="case__subtitle" data-i18n="case.sim.subtitle">
-          Otimização de corte para reduzir desperdício de matéria-prima — desenvolvido como TCC
+          Otimização de corte para reduzir desperdício de matéria-prima, desenvolvido como TCC
           em Engenharia de Produção no Instituto Mauá de Tecnologia.
         </p>
         <div class="tags">
@@ -63,7 +63,7 @@
         <p data-i18n="case.sim.ctx">
           Gráficas e indústrias cortam rótulos e adesivos a partir de folhas grandes de
           matéria-prima. Quando o arranjo das peças na folha é definido manualmente, sobra
-          material entre os cortes — e cada ponto percentual de desperdício vira custo direto
+          material entre os cortes, e cada ponto percentual de desperdício vira custo direto
           de insumo. O problema de decidir o melhor arranjo é um clássico da pesquisa
           operacional: o 2D bin packing, computacionalmente intratável de resolver por força bruta.
         </p>
@@ -76,7 +76,7 @@
           espaçamento entre peças e o mix de rótulos do pedido. O motor de otimização testa
           heurísticas clássicas de empacotamento (MaxRects, Guillotine e Skyline, via rectpack),
           busca o menor número de folhas capaz de alocar todas as peças e apresenta o layout de
-          corte com métricas de utilização e desperdício — exportável em PNG e CSV.
+          corte com métricas de utilização e desperdício, com exportação em PNG e CSV.
         </p>
         <figure class="case__figure">
           <img src="../assets/img/sim-layout-maxrects.png" alt="Layout de corte gerado pelo simulador com heurística MaxRects" loading="lazy" />
@@ -88,7 +88,7 @@
         <figure class="case__figure">
           <img src="../assets/img/sim-comparativo.png" alt="Comparação entre as heurísticas MaxRects, Guillotine e Skyline" loading="lazy" />
           <figcaption data-i18n="case.sim.fig2">
-            O mesmo pedido resolvido por três heurísticas — comparar estratégias antes de cortar
+            O mesmo pedido resolvido por três heurísticas. Comparar estratégias antes de cortar
             é justamente o valor do simulador.
           </figcaption>
         </figure>
@@ -99,14 +99,14 @@
         <ul class="case__list">
           <li data-i18n="case.sim.h1">Busca incremental do número mínimo de folhas, partindo do limite inferior teórico (área total ÷ área útil) e dobrando até alocar todas as peças.</li>
           <li data-i18n="case.sim.h2">Precisão dimensional: cálculos em décimos de milímetro com inteiros, evitando erros de ponto flutuante no encaixe.</li>
-          <li data-i18n="case.sim.h3">Dois modos de operação — agrupado (mistura rótulos para máximo aproveitamento) e único (uma folha por tipo de rótulo).</li>
+          <li data-i18n="case.sim.h3">Dois modos de operação: agrupado (mistura rótulos para máximo aproveitamento) e único (uma folha por tipo de rótulo).</li>
           <li data-i18n="case.sim.h4">Suporte a rotação de peças, margens de impressão e espaçamento de corte configuráveis.</li>
           <li data-i18n="case.sim.h5">Arquitetura modular (packing · plotting · utils) com separação clara entre motor de otimização e interface.</li>
         </ul>
       </section>
 
       <nav class="case__nav">
-        <a href="datamart.html" class="case__nav-link" data-i18n="case.next.dm">Próximo case: Datamart em Star Schema →</a>
+        <a href="datamart.html" class="case__nav-link" data-i18n="case.next.dm">Próximo case: Data Mart de Receita →</a>
       </nav>
     </div>
   </main>
