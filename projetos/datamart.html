@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Data Mart de Receita · Murilo Barreiro</title>
+  <meta name="description" content="Case study: data mart dimensional de receita da assessoria de investimentos, com ETL orquestrado no Airflow e modelo estrela no SQL Server." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" aria-label="Início">MB<span class="nav__logo-dot">.</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="../index.html#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="../index.html#experiencia" data-i18n="nav.experience">Experiência</a>
+        <a href="../index.html#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="../index.html#stack" data-i18n="nav.stack">Stack</a>
+        <a href="../index.html#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-toggle__opt is-active" data-lang="pt">PT</span>
+          <span class="lang-toggle__sep">·</span>
+          <span class="lang-toggle__opt" data-lang="en">EN</span>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="case">
+    <div class="case__inner">
+      <a href="../index.html#projetos" class="case__back" data-i18n="case.back">← Voltar aos projetos</a>
+
+      <header class="case__hero">
+        <h1 class="case__title" data-i18n="case.dm.title">Data Mart de Receita</h1>
+        <p class="case__subtitle" data-i18n="case.dm.subtitle">
+          Receita da assessoria de investimentos, vinda de fontes em SQL Server, Oracle e APIs
+          externas, consolidada em um modelo estrela no SQL Server com ETL orquestrado no Airflow.
+        </p>
+        <div class="tags">
+          <span class="tag">SQL Server</span><span class="tag">Airflow</span><span class="tag">Star Schema</span><span class="tag">ETL</span><span class="tag">Oracle</span>
+        </div>
+        <div class="case__links">
+          <a href="https://dbdocs.io/murilobarreiro7/Projeto-Datamart" target="_blank" rel="noopener" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+            <span data-i18n="case.dm.link1">Diagrama interativo (dbdocs)</span>
+          </a>
+          <a href="https://notion.so/2fc0d6fd969c809cac19ce4f2071e52c" target="_blank" rel="noopener" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14 21 3"/></svg>
+            <span data-i18n="case.dm.link2">Documentação (Notion)</span>
+          </a>
+        </div>
+      </header>
+
+      <section class="case__section">
+        <h2 data-i18n="case.ctxTitle">O contexto</h2>
+        <p data-i18n="case.dm.ctx">
+          O time de assessoria de investimentos apura receita a partir de fontes heterogêneas:
+          renda fixa, renda variável, fundos e outros produtos, distribuídos entre SQL Server,
+          Oracle e APIs externas. Cada fonte tem estrutura, granularidade e regras de negócio
+          próprias. Sem um processo estruturado de integração, era inviável analisar receita
+          consolidada, produtividade dos assessores e evolução de carteira.
+        </p>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.solTitle">A solução</h2>
+        <p data-i18n="case.dm.sol">
+          Modelei e implementei um data mart dimensional em esquema estrela no SQL Server, com
+          pipeline de ETL orquestrado no Airflow. Os dados brutos das diferentes origens chegam
+          a uma camada de staging, onde são padronizados e conformados com as chaves substitutas
+          do modelo, e só então entram nas tabelas fato e dimensão por carga incremental.
+        </p>
+        <figure class="case__figure case__figure--diagram">
+          <img src="../assets/img/datamart-star-schema.svg" alt="Diagrama do modelo estrela: FatoReceita e FatoMetaMensal com as dimensões de data, cliente, produto, assessor, owner e tipo de meta" loading="lazy" />
+          <figcaption data-i18n="case.dm.fig1">
+            O modelo real resumido: duas fatos e seis dimensões. O diagrama completo, com todas
+            as colunas e relacionamentos, está publicado no dbdocs.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.dm.archTitle">A arquitetura</h2>
+        <ul class="case__list">
+          <li data-i18n="case.dm.a1">FatoReceita concentra o negócio: granularidade por data, cliente e produto, com quantidade de negócios, valor bruto e receitas bruta e líquida. Chave primária composta e FKs para todas as dimensões.</li>
+          <li data-i18n="case.dm.a2">FatoMetaMensal fica isolada da fato de receita e relaciona owner, tipo de meta e mês ao valor-alvo, o que permite comparar receita realizada contra a meta.</li>
+          <li data-i18n="case.dm.a3">Seis dimensões dão contexto: cliente (cadastro, perfil e vínculo com o CRM), produto (categoria, subcategoria e emissor), assessor e owner (hierarquia comercial), calendário completo com flags de pregão e feriado, e tipos de meta com unidade de medida.</li>
+          <li data-i18n="case.dm.a4">A staging recebe os dados brutos identificados por fonte, com tipos flexíveis e sem chaves, servindo de área de validação e reprocessamento antes da carga final.</li>
+        </ul>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.dm.decTitle">Decisões técnicas</h2>
+        <ul class="case__list">
+          <li data-i18n="case.dm.h1">Índices covering na FatoReceita para os principais padrões de consulta (por cliente, por data e assessor, por owner, por produto), cada um incluindo as colunas de valor mais consultadas para responder dashboards sem lookup na tabela base.</li>
+          <li data-i18n="case.dm.h2">Coluna computada de semestre na dimensão de calendário, evitando lógica duplicada nas consultas de BI.</li>
+          <li data-i18n="case.dm.h3">Constraints de FK com WITH CHECK desde a criação, impedindo que dados órfãos das múltiplas fontes cheguem à camada dimensional.</li>
+          <li data-i18n="case.dm.h4">Separação clara entre staging (schema flexível, sem PK) e camada dimensional (tipagem estrita, PKs e FKs), permitindo validar e reprocessar antes da carga final.</li>
+          <li data-i18n="case.dm.h5">Airflow unificando a ingestão de fontes com stacks distintas (SQL Server, Oracle e APIs) num único fluxo controlado e agendado.</li>
+        </ul>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.dm.resTitle">O resultado</h2>
+        <p data-i18n="case.dm.res">
+          Receita de múltiplas fontes consolidada em um único modelo dimensional, com performance
+          adequada para os dashboards de BI e para o acompanhamento de metas por owner e mês.
+        </p>
+      </section>
+
+      <nav class="case__nav">
+        <a href="ata-ia.html" class="case__nav-link" data-i18n="case.next.ata">Próximo case: Ata de Reunião com IA →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p data-i18n="footer.text">Desenvolvido por Murilo Barreiro · Python, SQL & muito café</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

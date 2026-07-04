@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark" />
+  <title>Ata de Reunião com IA · Murilo Barreiro</title>
+  <meta name="description" content="Case study: pipeline Python de transcrição, diarização e geração de atas de reunião com IA." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📊</text></svg>" />
+</head>
+<body>
+
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo" aria-label="Início">MB<span class="nav__logo-dot">.</span></a>
+      <nav class="nav__links" id="navLinks">
+        <a href="../index.html#sobre" data-i18n="nav.about">Sobre</a>
+        <a href="../index.html#experiencia" data-i18n="nav.experience">Experiência</a>
+        <a href="../index.html#projetos" data-i18n="nav.projects">Projetos</a>
+        <a href="../index.html#stack" data-i18n="nav.stack">Stack</a>
+        <a href="../index.html#contato" data-i18n="nav.contact">Contato</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+          <span class="lang-toggle__opt is-active" data-lang="pt">PT</span>
+          <span class="lang-toggle__sep">·</span>
+          <span class="lang-toggle__opt" data-lang="en">EN</span>
+        </button>
+        <button class="nav__burger" id="navBurger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="case">
+    <div class="case__inner">
+      <a href="../index.html#projetos" class="case__back" data-i18n="case.back">← Voltar aos projetos</a>
+
+      <header class="case__hero">
+        <h1 class="case__title" data-i18n="case.ata.title">Ata de Reunião com IA</h1>
+        <p class="case__subtitle" data-i18n="case.ata.subtitle">
+          Pipeline 100% Python que transforma a gravação de uma reunião em ata estruturada:
+          transcrição, identificação de falantes e geração de resumo com LLMs.
+        </p>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">Whisper</span><span class="tag">Pyannote</span><span class="tag">GPT · Gemini</span><span class="tag">FFmpeg</span>
+        </div>
+        <div class="case__links">
+          <a href="https://github.com/Murilo-Barreiro/transcricao-e-diarizacao" target="_blank" rel="noopener" class="btn btn--ghost">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.7 1.6.3 2.8.1 3.2.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3"/></svg>
+            <span data-i18n="case.repo2">Ver repositório</span>
+          </a>
+        </div>
+      </header>
+
+      <section class="case__section">
+        <h2 data-i18n="case.ctxTitle2">O contexto</h2>
+        <p data-i18n="case.ata.ctx">
+          Reuniões entre assessores de investimento e clientes precisam de registro fiel do
+          que foi discutido, decidido e prometido. Fazer isso manualmente consome tempo de quem
+          deveria estar atendendo e produz atas inconsistentes. A combinação de modelos de
+          speech-to-text, diarização e LLMs torna possível automatizar o fluxo inteiro.
+        </p>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.solTitle2">A solução</h2>
+        <p data-i18n="case.ata.sol">
+          Um pipeline modular que recebe áudio ou vídeo (inclusive em lote), normaliza com
+          FFmpeg, transcreve com faster-whisper, identifica quem falou em cada trecho com
+          Pyannote, alinha falante e fala, e envia a transcrição estruturada para um LLM
+          (GPT ou Gemini, configurável) gerar ata e resumo em markdown, com logging detalhado
+          em cada etapa.
+        </p>
+        <figure class="case__figure case__figure--diagram">
+          <img src="../assets/img/ata-pipeline.svg" alt="Diagrama do pipeline: áudio, FFmpeg, Whisper, Pyannote, merge, LLM, ata" loading="lazy" />
+          <figcaption data-i18n="case.ata.fig1">
+            As sete etapas do pipeline. Cada bloco é um módulo Python independente.
+          </figcaption>
+        </figure>
+        <figure class="case__figure">
+          <pre class="case__sample" data-i18n="case.ata.sample">## Ata: Reunião de acompanhamento (exemplo ilustrativo)
+
+**Participantes:** FALANTE_01 (assessor), FALANTE_02 (cliente)
+
+**Resumo:** revisão trimestral da carteira; cliente demonstrou
+interesse em aumentar exposição a renda fixa indexada.
+
+**Decisões:**
+- Rebalancear 15% da carteira para CDBs pós-fixados
+- Agendar nova revisão para o próximo trimestre
+
+**Pendências:**
+- Assessor: enviar comparativo de fundos até sexta-feira</pre>
+          <figcaption data-i18n="case.ata.fig2">
+            Formato da ata gerada, com dados fictícios de exemplo.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="case__section">
+        <h2 data-i18n="case.hlTitle2">Destaques técnicos</h2>
+        <ul class="case__list">
+          <li data-i18n="case.ata.h1">Diarização com atribuição de falas: a transcrição final indica quem disse o quê, com timestamps, requisito para uma ata ter valor.</li>
+          <li data-i18n="case.ata.h2">Provedor de LLM configurável (OpenAI GPT ou Google Gemini) sem mudança de código, só de configuração.</li>
+          <li data-i18n="case.ata.h3">Processamento em lote de múltiplos arquivos, com suporte a formatos de áudio e vídeo via FFmpeg.</li>
+          <li data-i18n="case.ata.h4">Aceleração opcional por GPU (CUDA) na transcrição, com fallback transparente para CPU.</li>
+          <li data-i18n="case.ata.h5">Modularização e logging detalhado por etapa: cada fase do pipeline pode ser reexecutada e auditada isoladamente.</li>
+        </ul>
+      </section>
+
+      <nav class="case__nav">
+        <a href="simulador.html" class="case__nav-link" data-i18n="case.next.sim">Próximo case: Simulador de Empacotamento 2D →</a>
+      </nav>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p data-i18n="footer.text">Desenvolvido por Murilo Barreiro · Python, SQL & muito café</p>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
