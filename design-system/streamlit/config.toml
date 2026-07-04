@@ -1,0 +1,10 @@
+# MB.dark — tema Streamlit
+# Copiar para .streamlit/config.toml no repositório do app
+
+[theme]
+base = "dark"
+primaryColor = "#bf5af2"
+backgroundColor = "#000000"
+secondaryBackgroundColor = "#141416"
+textColor = "#f5f5f7"
+font = "sans serif"
