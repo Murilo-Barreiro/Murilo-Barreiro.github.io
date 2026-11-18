@@ -1,8 +1,8 @@
-# Portfólio — Murilo Pereira Barreiro
+# Portfólio - Murilo Pereira Barreiro
 
 Portfólio interativo de dados: Engenharia de Dados · BI · Ciência de Dados.
 
-Site estático (HTML/CSS/JS puro, sem dependências) — bilíngue PT/EN, com efeito de
+Site estático (HTML/CSS/JS puro, sem dependências) - bilíngue PT/EN, com efeito de
 digitação, fundo animado, timeline de experiência, cards de projetos e download de CV.
 
 ## Estrutura
@@ -34,8 +34,12 @@ python -m http.server 8765
    git remote add origin https://github.com/Murilo-Barreiro/Murilo-Barreiro.github.io.git
    git push -u origin main
    ```
-3. Em **Settings → Pages**, confirme que a fonte é a branch `main` (raiz).
+3. Em **Settings > Pages**, confirme que a fonte é a branch `main` (raiz).
 4. Em alguns minutos o site estará no ar.
 
-> Os PDFs originais dos currículos na raiz da pasta são material de trabalho —
+> Os PDFs originais dos currículos na raiz da pasta são material de trabalho -
 > não precisam ir para o repositório (só os de `assets/cv/` são usados pelo site).
+
+## Licença
+
+O código (HTML, CSS e JavaScript) está sob a licença MIT. Os textos, imagens e currículos em `assets/` são pessoais e não estão cobertos por ela.
